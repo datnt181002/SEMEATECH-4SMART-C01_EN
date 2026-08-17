@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "4smart-c01-sensor-utility"
+version = "1.0.0"
+description = "Windows desktop utility for the SemeaTech 4SMART-C01 electrochemical gas sensor module."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "PySide6>=6.7",
+    "pyserial>=3.5",
+    "pyqtgraph>=0.13",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pyinstaller>=6.0",
+]
+
+[project.scripts]
+4smart-c01-tool = "main:main"
+
+[tool.setuptools]
+packages = ["app", "app.communication", "app.logging", "app.protocol", "app.widgets"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]

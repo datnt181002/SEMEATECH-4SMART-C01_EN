@@ -1,0 +1,25 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+build/
+dist/
+*.spec
+*.log
+*.csv
+*.metadata.json
+.env
+.env.*
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Keep the packaged release executable that was requested in the repo root.
+*.exe
+!4SMART-C01-Sensor-Utility.exe
